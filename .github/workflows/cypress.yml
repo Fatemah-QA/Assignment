@@ -1,0 +1,12 @@
+name: run_in_pipeline
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run
+        uses: cypress-io/github-action@v6
+        with:
+          command: yarn task cypress:run:chrome:task
+        env:
+          ROOT_URL: "https://react-email-editor-demo.netlify.app/"
