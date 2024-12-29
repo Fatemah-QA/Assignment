@@ -1,5 +1,5 @@
 class pageObject {
-  changeFont() {
+  changeFontAndColor() {
     cy.wait(1000);
     cy.getIframe().within(() => {
       cy.get(
@@ -7,31 +7,34 @@ class pageObject {
         { timeout: 8000 }
       )
         .eq(2)
+        .should("be.visible")
+        .and("have.css", "color", "rgb(255, 255, 255)")
         .click();
       cy.get('[class="sc-hbtGpV CUfHT dropdown-button"]')
         .eq(0)
         .should("be.visible")
         .click();
       cy.get('[id=":r2s:"]').click({ force: true });
+      this.changeFontSize();
+      this.changeColor();
     });
   }
 
   changeFontSize() {
-    cy.getIframe().within(() => {
-      cy.get(
-        '[class="sc-enMaOJ hbBQWD blockbuilder-layer blockbuilder-layer-selectable"]',
-        { timeout: 8000 }
-      )
-        .eq(2)
-        .click();
-      cy.get("[]").should("be.visible").click();
+    cy.get(
+      '[class="blockbuilder-widget blockbuilder-font-size-widget"]'
+    ).within(() => {
+      cy.get('[class="sc-fFoeYl cogLub input-form"]')
+        .should("be.visible")
+        .type("{backspace}{backspace}50");
     });
   }
 
   changeColor() {
-    //  .and("have.css", "color", "rgb(255, 255, 255)")
-    //cy.get('[class="sc-cpjgyG cvnHWw circle-picker"]').should("be.visible");
-    //cy.get('[ class="sc-fJAEDJ hLQVoj"]');
+    cy.fixture("data").then((data) => {
+      cy.get('[id="color-picker-trigger"]').should("be.visible").click();
+      cy.get(data.changeColor).click();
+    });
   }
 
   saveDesign() {

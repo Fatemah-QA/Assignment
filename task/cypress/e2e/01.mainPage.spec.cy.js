@@ -8,8 +8,7 @@ describe("Test Email Editor", () => {
     cy.visit("/");
   });
   it("Customize and Modify email content - Main Heading", () => {
-    obj.changeFont();
-    obj.changeColor();
+    obj.changeFontAndColor();
     obj.saveDesign();
     obj.exportHTML();
     obj.verifyChanges(consoleLogs);

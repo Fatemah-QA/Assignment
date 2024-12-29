@@ -1,5 +1,5 @@
 {
-  "name": "Using fixtures to represent data",
+  "changeColor": "[ color='#FBEEB8']",
   "changedPortion": "h1 style",
-  "changesMade": "margin: 0px; color: #ffffff; line-height: 140%; text-align: center; word-wrap: break-word; font-family: comic sans ms,sans-serif; font-size: 48px; font-weight: 400;"
+  "changesMade": "margin: 0px; color: #fbeeb8; line-height: 140%; text-align: center; word-wrap: break-word; font-family: comic sans ms,sans-serif; font-size: 50px; font-weight: 400;"
 }

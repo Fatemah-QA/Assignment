@@ -1,8 +1,5 @@
 {
   "dependencies": {
     "cypress": "^13.17.0"
-  },
-  "scripts": {
-    "cypress:run:chrome": "cypress run --headless --browser chrome"
   }
 }
