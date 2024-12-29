@@ -16,6 +16,18 @@ class pageObject {
     });
   }
 
+  changeFontSize() {
+    cy.getIframe().within(() => {
+      cy.get(
+        '[class="sc-enMaOJ hbBQWD blockbuilder-layer blockbuilder-layer-selectable"]',
+        { timeout: 8000 }
+      )
+        .eq(2)
+        .click();
+      cy.get("[]").should("be.visible").click();
+    });
+  }
+
   changeColor() {
     //  .and("have.css", "color", "rgb(255, 255, 255)")
     //cy.get('[class="sc-cpjgyG cvnHWw circle-picker"]').should("be.visible");
